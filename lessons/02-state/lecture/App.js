@@ -6,11 +6,21 @@ import { FaMinus, FaPlus } from "react-icons/fa"
 // We can render with values put into variables:
 
 export default function Minutes() {
-  const minutes = 5
+  // const minutes = 5 // OLD
+  const [minutes, setMinutes] = useState(1) // new
+  const [err, setErr] = useState(null)
   return (
     <div className="Minutes">
       <div>
-        <button type="button" className="icon_button Minutes_button">
+        <button type="button" className="icon_button Minutes_button" onClick = {
+          /*this is new code from the lecture*/
+          () => {
+            if (minutes - 1 <= 0) {
+              setErr('can\'t have negative minutes!')
+            } else {
+              setMinutes(minutes - 1)
+            }
+          }}>
           <FaMinus />
         </button>
       </div>
@@ -18,10 +28,22 @@ export default function Minutes() {
         {minutes} Minutes
       </div>
       <div>
-        <button type="button" className="icon_button Minutes_button">
+        <button type="button" className="icon_button Minutes_button" onClick = {
+          //this is new code from the lecture
+          () => {
+            setMinutes(minutes + 1)
+            setErr(null)
+          }
+        }>
           <FaPlus />
         </button>
       </div>
+      {/* new error handling code */}
+      {err && (
+      <center>
+        <p style={{ color: 'red'}}>{err}</p>
+      </center>
+      )}
     </div>
   )
 }
