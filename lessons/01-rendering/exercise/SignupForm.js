@@ -8,5 +8,15 @@ import { DateFields, MonthField, DayField, YearField } from "app/DateFields"
 // export default SignupForm
 
 export default function SignupForm() {
-  return <form className="SignupForm">{/* Your work here */}</form>
+  return <form className="SignupForm">
+    <input type="text" placeholder="Display Name"/>
+    <input type="text" placeholder="Photo URL"/>
+    <input type="email" placeholder="Email"/>
+    <input type="password" placeholder="Password"/>
+    <DateFields>
+      <MonthField/>
+      <DayField/>
+      <YearField/>
+    </DateFields>
+  </form>
 }
