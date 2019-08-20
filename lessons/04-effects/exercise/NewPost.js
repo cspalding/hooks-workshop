@@ -11,8 +11,14 @@ const MAX_MESSAGE_LENGTH = 200
 
 export default function NewPost({ takeFocus, date, onSuccess, showAvatar }) {
   const [{ auth }] = useAppState()
-  const [message, setMessage] = useState('Ran around the lake.')
+  const localStorageKey = makeNewPostKey(date)
+  const initialMessage = getLocalStorageValue(localStorageKey);
+  const [message, setMessage] = useState(initialMessage ? initialMessage: '')
   const messageTooLong = message.length > MAX_MESSAGE_LENGTH
+
+  useEffect(() => {
+    setLocalStorage(localStorageKey, message)
+  }, [localStorageKey, message])
 
   function handleMessageChange(event) {
     setMessage(event.target.value)
@@ -27,6 +33,7 @@ export default function NewPost({ takeFocus, date, onSuccess, showAvatar }) {
           placeholder="Tell us about your workout!"
           value={message}
           onChange={handleMessageChange}
+          autoFocus={takeFocus}
         />
         <div className="NewPost_char_count">
           {message.length}/{MAX_MESSAGE_LENGTH}
