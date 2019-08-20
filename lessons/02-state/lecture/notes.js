@@ -20,13 +20,13 @@ function setMinutes() {
 
 // phony hooks
 // let's take a look at how react might implement the useState hook
-const states = []
+const states = [] // <- this concept in hooks is why we don't need this.state anymore
 let callCount = -1
 
 function useState(initialValue) {
   const id = ++callCount
 
-  if(states[id]) { //
+  if(states[id]) {
     return states[id]
   }
 
