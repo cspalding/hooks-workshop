@@ -17,3 +17,31 @@ function setMinutes() {
 
 // in react we think about state first and then hook it up to a listener later on
 // in react: anything ever happens, setState
+
+// phony hooks
+// let's take a look at how react might implement the useState hook
+const states = []
+let callCount = -1
+
+function useState(initialValue) {
+  const id = ++callCount
+
+  if(states[id]) { //
+    return states[id]
+  }
+
+  const setValue = (newValue) => {
+    states[id][0] = newValue
+    renderPhonyHooks()
+  }
+
+  const tuple  = [initialValue, setValue]
+  states.push(tuple)
+
+  return tuple
+}
+
+function renderPhonyHooks() {
+  callCount = -1 //reset call count so we can find out states in the right order
+  ReactDOM.render(<Minutes />, document.getElementById("root"))
+}
