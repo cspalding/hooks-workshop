@@ -10,13 +10,20 @@ import { login } from "app/utils"
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
   return (
     <form onSubmit={(e) => {
       e.preventDefault()
       setLoading(true)
-      const [emailNode, pwNode] = e.target.elements[0]
-      setLoading(false)
-    }}>
+      const [emailNode, pwNode] = e.target.elements
+      login(emailNode.value, pwNode.value)
+        .then(() => setLoading(false))
+        .catch((e) => {
+          setError(`sorry we ran into an error: ${e.message}`)
+          setLoading(false)
+        })
+      }}>
+      {error && <p style={{color: 'red'}}>{error}</p>}
       <VisuallyHidden>
         <label htmlFor="login:email">Email:</label>
       </VisuallyHidden>
