@@ -21,3 +21,6 @@
 
 // static analysis tools for hooks are available and pretty good; 
 // they'll catch a lot of errors for us
+
+// since useEffect is just a function, we can compose it with specific functionality
+// that we need for our project to encapsulate our needs and keep our code DRY
