@@ -38,3 +38,41 @@
 * Currently it's not easy to make the choice between building static & dynamic (server-side rendered) sites
 * If you could host a dynamic site as easily as you can host a static site, it would change the way that frameworks evolve
 * **COOL FREE STUFF** https://workers.cloudflare.com/
+
+## Mihai Cernusca
+* Retro on an animation project in React
+* Sidenote - I don't really get all the hubub around animations
+* Shape Generation
+
+## Nat Alison
+* What does it take to translate docs for a popular framework (i.e. React)
+* Why should React be translated?
+  * More than 80% of the world does not speak English.
+  * If you don't translate official docs, folks will do it on their own
+    * might get something wrong
+    * these docs are hard to find
+    * no formal support from the React team, even though they want to support!
+* What are the criteria for a translation?
+  * Translations should be high quality (don't just run it through Google Translate)
+  * Should be easy for translators to get involved
+  * Translations need to be kept up to date
+* Initial idea was to use CrowdIn
+  * Ended up not meeting the three criteria above
+* Hmm, what does Vue do?
+  * store translations in forks <- that seems like a good idea
+* How do we make sure the idea is good?
+  * Start small, choose 3 languages and see if it works
+  * get the hard stuff sorted out early (choosing a small sample helps)
+  * recognize complex geopolitical situations when choosing how to translate
+    * pick language codes, not country codes
+* How do we scale the translation process?
+  * Automate as much as you can
+  * don't get banned from GitHub for running too many bots
+* How do you manage translations?
+  * make it simple
+    * add contributions/getting started guides
+  * get people motivated
+    * gamify, gamify, gamify
+    * at least 2 people on each repo so they can cross-check one another
+* How do we keep the translations up to date?
+  * Cron to create a PR via git-merge, obviously.
