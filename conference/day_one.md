@@ -76,3 +76,8 @@
     * at least 2 people on each repo so they can cross-check one another
 * How do we keep the translations up to date?
   * Cron to create a PR via git-merge, obviously.
+
+## Josh Comeau
+* More animation stuff
+* Devs default to prioritizing load-time and forget about interaction
+* People spend a lot of time interacting with tools after they load! That should be prioritized too.
