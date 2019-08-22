@@ -81,3 +81,15 @@
 * More animation stuff
 * Devs default to prioritizing load-time and forget about interaction
 * People spend a lot of time interacting with tools after they load! That should be prioritized too.
+
+## Joel Denning
+* How to get involved with community work
+1. Find something you care about; it can be vague
+2. Schedule 60-90 minutes on your calendar recurring (hard, do it over dinner or brunch or something. Meals tend to be good)
+3. Find one other person who will show up.
+4. Every meeting should try to answer the question "what the hell are we doing here?"
+5. Just Utah Coders, Comunidades Unidas are looking for donations
+
+## Danielle Carrick
+* actually not that hard to use React + D3, just have to be thoughtful about the combination
+* Use React for the rendering and D3 for data manipulation.
